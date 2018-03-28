@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+
 import java.util.ArrayList;
 
 /*
@@ -74,6 +75,12 @@ public class TrackAdapter extends ArrayAdapter<Track> {
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
         titleTextView.setText(currentTrack.getmTitle());
+
+        // Find the TextView in the list_item.xml layout with the ID version_number
+        TextView timeTextView = (TextView) listItemView.findViewById(R.id.time_text_view);
+        // Get the version number from the current AndroidFlavor object and
+        // set this text on the number TextView
+        timeTextView.setText(currentTrack.getmTime());
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

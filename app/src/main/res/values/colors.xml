@@ -13,4 +13,7 @@
     <!-- Background color for the colors category -->
     <color name="category_album">#8800A0</color>
 
+    <color name="colorPrimaryText">#000000</color>
+    <color name="colorToastBackground">#DAAA</color>
+
 </resources>

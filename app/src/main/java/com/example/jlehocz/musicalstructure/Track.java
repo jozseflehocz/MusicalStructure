@@ -10,18 +10,12 @@ public class Track {
     private String mAlbum;
     private String mTitle;
     private String mTime;
-    private String mCover;
-    private int mYear;
-    private String mGenre;
 
-    public Track(String artist, String album, String title, String time,String cover,int year,String genre) {
+    public Track(String artist, String album, String title, String time) {
         mArtist = artist;
         mAlbum=album;
         mTitle = title;
         mTime =time;
-        mCover=cover;
-        mYear=year;
-        mGenre=genre;
     }
 
     public String getmArtist() {
@@ -35,14 +29,5 @@ public class Track {
     }
     public String getmTime() {
         return mTime;
-    }
-    public String getmCover() {
-        return mCover;
-    }
-    public int getmYear() {
-        return mYear;
-    }
-    public String getmGenre() {
-        return mGenre;
     }
 }
