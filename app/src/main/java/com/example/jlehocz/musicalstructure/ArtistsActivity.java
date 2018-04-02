@@ -1,5 +1,6 @@
 package com.example.jlehocz.musicalstructure;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -64,6 +65,18 @@ public class ArtistsActivity extends AppCompatActivity {
                 toast.setDuration(Toast.LENGTH_LONG);
                 toast.setView(layout);
                 toast.show();
+
+                Intent nowPlayingIntent = new Intent(ArtistsActivity.this, NowPlayingActivity.class);
+
+                /**
+                 * https://stackoverflow.com/questions/2405120/how-to-start-an-intent-by-passing-some-parameters-to-it
+                 */
+                nowPlayingIntent.putExtra("artist",currentTrack.getmArtist());
+                nowPlayingIntent.putExtra("album",currentTrack.getmAlbum());
+                nowPlayingIntent.putExtra("title",currentTrack.getmTitle());
+                nowPlayingIntent.putExtra("time",currentTrack.getmTime());
+
+                startActivity(nowPlayingIntent);
             }
         });
 

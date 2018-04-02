@@ -4,4 +4,5 @@
     <string name="category_title">Title</string>
     <string name="category_artist">Artist</string>
     <string name="category_album">Album</string>
+    <string name="now_playing">Now Playing</string>
 </resources>
