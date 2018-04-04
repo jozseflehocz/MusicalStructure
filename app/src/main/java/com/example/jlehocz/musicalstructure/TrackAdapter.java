@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import java.util.ArrayList;
+
 
 /*
 * Created by jlehocz on 2018.03.17.
@@ -82,8 +84,14 @@ public class TrackAdapter extends ArrayAdapter<Track> {
         // set this text on the number TextView
         timeTextView.setText(currentTrack.getmTime());
 
-        // Return the whole list item layout (containing 2 TextViews and an ImageView)
-        // so that it can be shown in the ListView
+        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        ImageView coverView = (ImageView) listItemView.findViewById(R.id.album_cover_image_view);
+        // Get the image resource ID from the current AndroidFlavor object and
+        // set the image to iconView
+        System.out.println("currentTrack.getmCoverImgId(): "+currentTrack.getmCoverImgId());
+        System.out.println("coverView: "+coverView);
+        coverView.setImageResource(currentTrack.getmCoverImgId());
+
         return listItemView;
     }
 }

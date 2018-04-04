@@ -10,12 +10,15 @@ public class Track {
     private String mAlbum;
     private String mTitle;
     private String mTime;
+    // Drawable resource ID
+    private int mCoverImgId;
 
-    public Track(String artist, String album, String title, String time) {
+    public Track(String artist, String album, String title, String time,int coverImgId) {
         mArtist = artist;
         mAlbum=album;
         mTitle = title;
         mTime =time;
+        mCoverImgId=coverImgId;
     }
 
     public String getmArtist() {
@@ -30,4 +33,5 @@ public class Track {
     public String getmTime() {
         return mTime;
     }
+    public int getmCoverImgId() {return mCoverImgId;}
 }

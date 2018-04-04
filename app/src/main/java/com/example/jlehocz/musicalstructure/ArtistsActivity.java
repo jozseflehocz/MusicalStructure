@@ -24,15 +24,22 @@ public class ArtistsActivity extends AppCompatActivity {
         // Create a list of tracks
         ArrayList<Track> tracks = new ArrayList<Track>();
 
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","Egi Taltos","4:48"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","Lullaby (The Final Gyre of Suns)","3:57"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","Beloved Enchantress","3:16"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","The Secret Path","5:53"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","In Gardens of Worlds Undreamt","4:18"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","Holdanyank","3:35"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","Echo of Atlantis","3:31"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","Pagan","5:02"));
-        tracks.add(new Track("The Moon And The Nightspirit","Of Dreams Forgotten and Fables Untold","Of Dreams Forgotten and Fables Untold","3:55"));
+        int coverImageId;
+        String artistName;
+        String albumTitle;
+
+        coverImageId=R.drawable.the_moon_and_the_nightspirit_metanoia;
+        artistName="The Moon And The Nightspirit";
+        albumTitle="Of Dreams Forgotten and Fables Untold";
+        tracks.add(new Track(artistName,albumTitle,"Egi Taltos","4:48",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"Lullaby (The Final Gyre of Suns)","3:57",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"Beloved Enchantress","3:16",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"The Secret Path","5:53",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"In Gardens of Worlds Undreamt","4:18",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"Holdanyank","3:35",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"Echo of Atlantis","3:31",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"Pagan","5:02",coverImageId));
+        tracks.add(new Track(artistName,albumTitle,"Of Dreams Forgotten and Fables Untold","3:55",coverImageId));
 
         // Create an {@link TrackAdapter}, whose data source is a list of {@link Track}s. The
         // adapter knows how to create list items for each item in the list.
@@ -75,6 +82,7 @@ public class ArtistsActivity extends AppCompatActivity {
                 nowPlayingIntent.putExtra("album",currentTrack.getmAlbum());
                 nowPlayingIntent.putExtra("title",currentTrack.getmTitle());
                 nowPlayingIntent.putExtra("time",currentTrack.getmTime());
+                nowPlayingIntent.putExtra("coverImgId",currentTrack.getmCoverImgId());
 
                 startActivity(nowPlayingIntent);
             }

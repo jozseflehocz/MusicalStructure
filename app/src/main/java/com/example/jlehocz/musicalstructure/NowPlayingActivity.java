@@ -3,16 +3,8 @@ package com.example.jlehocz.musicalstructure;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
@@ -26,6 +18,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         String album= thisIntent.getStringExtra("album");
         String title = thisIntent.getStringExtra("title");
         String time= thisIntent.getStringExtra("time");
+        int coverImgId=thisIntent.getIntExtra("coverImgId",R.drawable.the_moon_and_the_nightspirit_metanoia);
 
         //replace android label "Now playing" to the title of the track
         setTitle(title);
@@ -53,6 +46,12 @@ public class NowPlayingActivity extends AppCompatActivity {
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
         timeTextView.setText(time);
+
+        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        ImageView coverView = (ImageView) findViewById(R.id.album_cover_image_view);
+        // Get the image resource ID from the current AndroidFlavor object and
+        // set the image to iconView
+        coverView.setImageResource(coverImgId);
 
     }
 }
