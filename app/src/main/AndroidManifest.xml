@@ -9,30 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".TracklistActivity"
+            android:label="@string/category_artist">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ArtistsActivity"
-            android:label="@string/category_artist"
-            android:parentActivityName=".MainActivity">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
+
         <activity
             android:name=".NowPlayingActivity"
             android:label="@string/now_playing"
-            android:parentActivityName=".ArtistsActivity">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
+            android:parentActivityName=".TracklistActivity">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ArtistsActivity"/>
+                android:value=".TracklistActivity" />
         </activity>
 
     </application>

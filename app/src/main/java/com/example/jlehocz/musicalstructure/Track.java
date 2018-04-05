@@ -13,25 +13,31 @@ public class Track {
     // Drawable resource ID
     private int mCoverImgId;
 
-    public Track(String artist, String album, String title, String time,int coverImgId) {
+    public Track(String artist, String album, String title, String time, int coverImgId) {
         mArtist = artist;
-        mAlbum=album;
+        mAlbum = album;
         mTitle = title;
-        mTime =time;
-        mCoverImgId=coverImgId;
+        mTime = time;
+        mCoverImgId = coverImgId;
     }
 
     public String getmArtist() {
         return mArtist;
     }
+
     public String getmAlbum() {
         return mAlbum;
     }
+
     public String getmTitle() {
         return mTitle;
     }
+
     public String getmTime() {
         return mTime;
     }
-    public int getmCoverImgId() {return mCoverImgId;}
+
+    public int getmCoverImgId() {
+        return mCoverImgId;
+    }
 }

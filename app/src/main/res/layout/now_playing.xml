@@ -6,29 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
+
     <TextView
         android:id="@+id/artist_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="The Moon and the Nightspirit"/>
+        tools:text="The Moon and the Nightspirit" />
+
     <TextView
         android:id="@+id/album_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Metatonia"/>
+        tools:text="Metatonia" />
+
     <ImageView
         android:id="@+id/album_cover_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:src="@drawable/the_moon_and_the_nightspirit_metanoia"/>
+        tools:src="@drawable/the_moon_and_the_nightspirit_metanoia" />
+
     <TextView
         android:id="@+id/track_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="A hajnal koszontese"/>
+        tools:text="A hajnal koszontese" />
+
     <TextView
         android:id="@+id/time_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="03:50"/>
+        tools:text="03:50" />
 </LinearLayout>

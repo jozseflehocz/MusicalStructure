@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ArtistsActivity extends AppCompatActivity {
+public class TracklistActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,7 @@ public class ArtistsActivity extends AppCompatActivity {
                 toast.setView(layout);
                 toast.show();
 
-                Intent nowPlayingIntent = new Intent(ArtistsActivity.this, NowPlayingActivity.class);
+                Intent nowPlayingIntent = new Intent(TracklistActivity.this, NowPlayingActivity.class);
 
                 /**
                  * https://stackoverflow.com/questions/2405120/how-to-start-an-intent-by-passing-some-parameters-to-it
