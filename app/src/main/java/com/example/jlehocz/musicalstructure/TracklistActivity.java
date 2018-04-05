@@ -3,14 +3,9 @@ package com.example.jlehocz.musicalstructure;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,16 +16,20 @@ public class TracklistActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.track_list);
 
-        // Create a list of tracks
+        // Tracks stored in ArrayList
         ArrayList<Track> tracks = new ArrayList<Track>();
 
+        //The repeated albuminfo stored in variables
         int coverImageId;
         String artistName;
         String albumTitle;
 
+        //Setting track info variables
         coverImageId=R.drawable.the_moon_and_the_nightspirit_metanoia;
         artistName="The Moon And The Nightspirit";
         albumTitle="Of Dreams Forgotten and Fables Untold";
+
+        // adding track to ArrayList using the variables
         tracks.add(new Track(artistName,albumTitle,"Egi Taltos","4:48",coverImageId));
         tracks.add(new Track(artistName,albumTitle,"Lullaby (The Final Gyre of Suns)","3:57",coverImageId));
         tracks.add(new Track(artistName,albumTitle,"Beloved Enchantress","3:16",coverImageId));
@@ -57,37 +56,24 @@ public class TracklistActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                //The track to be played
                 Track currentTrack = (Track)listView.getItemAtPosition(i);
-                String s=currentTrack.getmArtist()+"\n\n"+currentTrack.getmAlbum();
 
-                //Display toast
-                LayoutInflater inflater = getLayoutInflater();
-                View layout = inflater.inflate(R.layout.custom_toast,
-                        (ViewGroup) findViewById(R.id.custom_toast_container));
-                TextView text = (TextView) layout.findViewById(R.id.text);
-                text.setText(s);
-                Toast toast = new Toast(getApplicationContext());
-                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                toast.setDuration(Toast.LENGTH_LONG);
-                toast.setView(layout);
-                toast.show();
+                //Creating intent for now playing activity
 
                 Intent nowPlayingIntent = new Intent(TracklistActivity.this, NowPlayingActivity.class);
 
                 /**
                  * https://stackoverflow.com/questions/2405120/how-to-start-an-intent-by-passing-some-parameters-to-it
+                 * adding track info as parameters to the intent
                  */
                 nowPlayingIntent.putExtra("artist",currentTrack.getmArtist());
                 nowPlayingIntent.putExtra("album",currentTrack.getmAlbum());
                 nowPlayingIntent.putExtra("title",currentTrack.getmTitle());
                 nowPlayingIntent.putExtra("time",currentTrack.getmTime());
                 nowPlayingIntent.putExtra("coverImgId",currentTrack.getmCoverImgId());
-
                 startActivity(nowPlayingIntent);
             }
         });
-
-
     }
 }
