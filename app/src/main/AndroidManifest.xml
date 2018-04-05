@@ -12,7 +12,7 @@
 
         <activity
             android:name=".TracklistActivity"
-            android:label="@string/category_artist">
+            android:label="@string/tracklist">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

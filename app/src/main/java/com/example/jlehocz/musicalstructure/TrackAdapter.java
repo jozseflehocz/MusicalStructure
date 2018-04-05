@@ -7,13 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
 import java.util.ArrayList;
 
-
 /*
-* Created by jlehocz on 2018.03.17.
 * https://github.com/udacity/ud839_CustomAdapter_Example/blob/master/app/src/main/java/com/example/android/flavor/AndroidFlavorAdapter.java
 * {@link AndroidFlavorAdapter} is an {@link ArrayAdapter} that can provide the layout for each list
 * based on a data source, which is a list of {@link AndroidFlavor} objects.
@@ -88,10 +84,7 @@ public class TrackAdapter extends ArrayAdapter<Track> {
         ImageView coverView = (ImageView) listItemView.findViewById(R.id.album_cover_image_view);
         // Get the image resource ID from the current AndroidFlavor object and
         // set the image to iconView
-        System.out.println("currentTrack.getmCoverImgId(): "+currentTrack.getmCoverImgId());
-        System.out.println("coverView: "+coverView);
         coverView.setImageResource(currentTrack.getmCoverImgId());
-
         return listItemView;
     }
 }

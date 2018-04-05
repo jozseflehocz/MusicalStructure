@@ -14,6 +14,8 @@ public class NowPlayingActivity extends AppCompatActivity {
         setContentView(R.layout.now_playing);
 
         Intent thisIntent = getIntent(); // gets the previously created intent
+
+        //Setting track attributes from intent parameters
         String artist = thisIntent.getStringExtra("artist");
         String album= thisIntent.getStringExtra("album");
         String title = thisIntent.getStringExtra("title");

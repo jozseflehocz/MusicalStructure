@@ -17,7 +17,7 @@ public class TracklistActivity extends AppCompatActivity {
         setContentView(R.layout.track_list);
 
         // Tracks stored in ArrayList
-        ArrayList<Track> tracks = new ArrayList<Track>();
+        ArrayList<Track> tracks = new ArrayList<>();
 
         //The repeated albuminfo stored in variables
         int coverImageId;

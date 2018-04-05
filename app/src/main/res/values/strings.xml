@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Musical Structure</string>
-    <string name="hello_world">Hello World!</string>
-    <string name="category_title">Title</string>
-    <string name="category_artist">Artist</string>
-    <string name="category_album">Album</string>
+    <string name="title">Title</string>
+    <string name="tracklist">Tracklist</string>
+    <string name="album">Album</string>
     <string name="now_playing">Now Playing</string>
 </resources>
