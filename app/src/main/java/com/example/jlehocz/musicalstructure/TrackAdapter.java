@@ -82,8 +82,8 @@ public class TrackAdapter extends ArrayAdapter<Track> {
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView coverView = (ImageView) listItemView.findViewById(R.id.album_cover_image_view);
-        // Get the image resource ID from the current AndroidFlavor object and
-        // set the image to iconView
+        // Get the image resource ID from the current track object and
+        // set the image to track cover image
         coverView.setImageResource(currentTrack.getmCoverImgId());
         return listItemView;
     }

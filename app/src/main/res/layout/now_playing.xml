@@ -2,42 +2,68 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="@dimen/padding_16dp">
 
     <ImageView
         android:id="@+id/album_cover_image_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
         android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         tools:src="@drawable/the_moon_and_the_nightspirit_metanoia" />
 
     <TextView
         android:id="@+id/artist_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="The Moon and the Nightspirit"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:text="The Moon and the Nightspirit" />
 
     <TextView
         android:id="@+id/album_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
         tools:text="Metatonia" />
 
-    <TextView
-        android:id="@+id/track_text_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="A hajnal koszontese" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/time_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="03:50" />
+        <TextView
+            android:id="@+id/track_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/padding_8dp"
+            tools:text="A hajnal koszontese" />
 
+        <TextView
+            android:id="@+id/time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/track_text_view"
+            android:layout_toRightOf="@+id/track_text_view"
+            tools:text="03:50" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/tracklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/tracklist"
+            tools:text="Tracklist" />
+    </LinearLayout>
 </LinearLayout>
