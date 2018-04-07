@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="@dimen/layout_padding">
 
     <ImageView
         android:id="@+id/album_cover_image_view"
@@ -20,7 +20,7 @@
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/album_cover_image_view"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="@dimen/layout_padding">
 
         <TextView
             android:id="@+id/artist_text_view"

@@ -9,15 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/*
-* https://github.com/udacity/ud839_CustomAdapter_Example/blob/master/app/src/main/java/com/example/android/flavor/AndroidFlavorAdapter.java
-* {@link AndroidFlavorAdapter} is an {@link ArrayAdapter} that can provide the layout for each list
-* based on a data source, which is a list of {@link AndroidFlavor} objects.
+/* source reused
+* https://github.com/udacity/ud839_CustomAdapter_Example/blob/master/app/src/main/java/com/example/android/flavor/trackAdapter.java
+* 
 * */
 
 public class TrackAdapter extends ArrayAdapter<Track> {
-
-    //private static final String LOG_TAG = WordAdapter.class.getSimpleName();
 
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
@@ -25,12 +22,12 @@ public class TrackAdapter extends ArrayAdapter<Track> {
      * to populate into the lists.
      *
      * @param context        The current context. Used to inflate the layout file.
-     * @param tracks A List of word objects to display in a list
+     * @param tracks A List of track objects to display in a list
      */
     public TrackAdapter(Activity context, ArrayList<Track> tracks) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
-        // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
+        // Because this is a custom adapter, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, tracks);
     }
@@ -53,34 +50,34 @@ public class TrackAdapter extends ArrayAdapter<Track> {
                     R.layout.list_item, parent, false);
         }
 
-        // Get the {@link AndroidFlavor} object located at this position in the list
+        // Get the currentTrack object located at this position in the list
         Track currentTrack = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
+        // Find the TextView in the list_item.xml layout with the ID artist_text_view
         TextView artistTextView = (TextView) listItemView.findViewById(R.id.artist_text_view);
-        // Get the version name from the current AndroidFlavor object and
+        // Get the artist from the current track object and
         // set this text on the name TextView
         artistTextView.setText(currentTrack.getmArtist());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
+        // Find the TextView in the list_item.xml layout with the ID album_text_view
         TextView albumTextView = (TextView) listItemView.findViewById(R.id.album_text_view);
-        // Get the version number from the current AndroidFlavor object and
+        // Get the album from the current track object and
         // set this text on the number TextView
         albumTextView.setText(currentTrack.getmAlbum());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
+        // Find the TextView in the list_item.xml layout with the ID track_text_view
         TextView titleTextView = (TextView) listItemView.findViewById(R.id.track_text_view);
-        // Get the version number from the current AndroidFlavor object and
+        // Get the track from the current track object and
         // set this text on the number TextView
         titleTextView.setText(currentTrack.getmTitle());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
+        // Find the TextView in the list_item.xml layout with the ID time_text_view
         TextView timeTextView = (TextView) listItemView.findViewById(R.id.time_text_view);
-        // Get the version number from the current AndroidFlavor object and
+        // Get the vtime from the current track object and
         // set this text on the number TextView
         timeTextView.setText(currentTrack.getmTime());
 
-        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        // Find the ImageView in the list_item.xml layout with the ID album_cover_image_view
         ImageView coverView = (ImageView) listItemView.findViewById(R.id.album_cover_image_view);
         // Get the image resource ID from the current track object and
         // set the image to track cover image
